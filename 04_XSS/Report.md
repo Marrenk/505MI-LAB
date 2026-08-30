@@ -17,9 +17,9 @@ We want to execute a client-side Cross-Site Scripting attack where the malicious
 
 ### Payload:
 
-- ```html
+```html
     <iframe src="javascript:alert(`xss`)">
-    ```
+```
 
 We look for a ***valid injection point*** that the client-side code transmits to an execution function. 
 Additionally, we need the input to be processed without sanitization or encoding.
@@ -115,7 +115,7 @@ Completing this challenge marks both XSS objectives as solved.
 
 ![Challenge Completed](./images/13.png)
 
-## Vulnerability Comparison & discussion 
+## Vulnerability comparison & discussion 
 
 DOM-based XSS: The user input is read, processed, and executed entirely on the client side by browser-executed scripts. The backend server does not need to store or process the malicious payload in its response for the payload to execute.
 
