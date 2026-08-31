@@ -13,14 +13,14 @@ In this report, we will use Burp Suite to intercept and modify HTTPS traffic bet
 
 ## Preliminary Steps - Configure Burp for SSLStrip
 
-### 1. Edit Proxy Listener
+### Edit Proxy Listener
 - Open Burp Suite and go to "Proxy" > "Proxy Settings". 
 - Search the section "Proxy Listener" > Edit the only interface.
 - Then go to "Request handling" and check the "Force use of TLS" option.
 
 ![Request handling options](./images/1.png)
 
-### 2. Edit Response modification rules 
+### Edit Response modification rules 
 - Then "Proxy Settings"> Response modification rules 
 - Check the following options:
 
