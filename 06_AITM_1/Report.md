@@ -18,20 +18,20 @@ In this report, we will use Burp Suite to intercept and modify HTTPS traffic bet
 - Search the section "Proxy Listener" > Edit the only interface.
 - Then go to "Request handling" and check the "Force use of TLS" option.
 
-![Request handling options](./images/1.png)
+    ![Request handling options](./images/1.png)
 
 ### Edit Response modification rules 
 - Then "Proxy Settings"> Response modification rules 
 - Check the following options:
 
-![Response modification options](./images/2.png)
+    ![Response modification options](./images/2.png)
 
-These configuration steps are essential as they allow us to position ourselves in the middle (Adversary-in-the-Middle) between the client and the server, enabling the modification of server responses before they reach the client. 
+    These configuration steps are essential as they allow us to position ourselves in the middle (Adversary-in-the-Middle) between the client and the server, enabling the modification of server responses before they reach the client. 
 
-Specifically:
-- **Force use of TLS**: This forces Burp Suite to communicate securely via HTTPS with the remote server, even when handling unencrypted incoming requests from the client.
-- **Convert HTTPS link to HTTP**: This option replaces all internal references and links in the webpage from HTTPS to HTTP before they are delivered to the client in the server's response, forcing the victim's browser to communicate strictly over unencrypted HTTP.
-- **Remove secure flag from cookies**: This forces the browser to transmit session cookies over an unencrypted HTTP channel, exposing sensitive session tokens to the adversary.
+    Specifically:
+    - **Force use of TLS**: This forces Burp Suite to communicate securely via HTTPS with the remote server, even when handling unencrypted incoming requests from the client.
+    - **Convert HTTPS link to HTTP**: This option replaces all internal references and links in the webpage from HTTPS to HTTP before they are delivered to the client in the server's response, forcing the victim's browser to communicate strictly over unencrypted HTTP.
+    - **Remove secure flag from cookies**: This forces the browser to transmit session cookies over an unencrypted HTTP channel, exposing sensitive session tokens to the adversary.
 
 ## 1. Without Strict Transport Security (STS)
 
